@@ -1,4 +1,6 @@
-local module = {}
+local helper = {}
+local module = {helper = helper}
+
 
 function module.stringToAscii(str)
     local asciiTable = {}
@@ -16,7 +18,7 @@ function module.asciiToString(asciiTable)
     return str
 end
 
-function module.helper.generatekey(l)
+function helper.generatekey(l)
     local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?/[]{}|\\:;,.~`"
     local out = ""
     for i = 1, l do
