@@ -16,6 +16,16 @@ function module.asciiToString(asciiTable)
     return str
 end
 
+function module.helper.generatekey(l)
+    local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?/[]{}|\\:;,.~`"
+    local out = ""
+    for i = 1, l do
+        local randomIndex = math.random(1, #chars)
+        out = out.. chars:sub(randomIndex, randomIndex)
+    end
+    return out
+end
+
 function module.encrypt(input, key)
     local keyAscii = module.stringToAscii(key)
     local keySum = 0
